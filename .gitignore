@@ -3,3 +3,9 @@ images/raw/
 
 # Python
 __pycache__/
+
+# Source video — keep large originals out of the repo
+video/
+*.mov
+*.mp4
+!images/*.mp4

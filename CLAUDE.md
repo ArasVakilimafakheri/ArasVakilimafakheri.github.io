@@ -25,7 +25,7 @@ rocket-liquids.html   /  one page per project, flat at the root
 style.css             all styling; palette as CSS variables at the top
 resume.pdf            linked from the nav and the About page
 images/               web-ready images (currently placeholder SVGs)
-tools/                optimize_images.py
+tools/                optimize_images.py, clip_to_gif.py
 .claude/skills/       add-project skill
 ```
 
@@ -60,6 +60,12 @@ and the grid tile.
 photos. It resizes, compresses, and strips EXIF — phone photos carry GPS
 coordinates that should not be published. Raw camera files committed by mistake
 stay in git history permanently.
+
+**Video clips**: `py tools/clip_to_gif.py <video> --start 0:12 --end 0:16 --name <slug>`
+cuts a clip and writes both a GIF and an MP4 so their sizes can be compared. It
+uses the ffmpeg bundled with the `imageio-ffmpeg` package, so nothing has to be
+installed system-wide. Keep source video out of the repo — only the output
+belongs in `images/`.
 
 **The nav bar is duplicated in every HTML file** — the cost of having no template
 engine. Change it in one page and it must change in all of them.
