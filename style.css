@@ -388,6 +388,26 @@ h2 {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* Stack the header before the wordmark starts crowding the nav links */
+  .header-inner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 14px;
+  }
+
+  .nav-left {
+    order: 2;
+  }
+
+  .wordmark {
+    order: 1;
+  }
+
+  .nav-right {
+    order: 3;
+    justify-content: center;
+  }
+
   .about-layout {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -403,25 +423,12 @@ h2 {
     padding: 20px 20px 24px;
   }
 
-  .header-inner {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    gap: 14px;
-  }
-
   .nav-left {
-    order: 2;
     gap: 20px;
   }
 
   .wordmark {
-    order: 1;
     font-size: 1.05rem;
-  }
-
-  .nav-right {
-    order: 3;
-    justify-content: center;
   }
 
   .intro,
