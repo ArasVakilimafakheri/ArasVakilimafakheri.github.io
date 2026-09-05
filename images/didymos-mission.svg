@@ -7,9 +7,8 @@
   </defs>
   <rect width="800" height="1000" fill="url(#g)"/>
   <rect x="28" y="28" width="744" height="944" fill="none" stroke="#F7EDDB" stroke-opacity="0.35" stroke-width="1.5"/>
-  <g font-family="Georgia, 'Times New Roman', serif" fill="#F7EDDB" text-anchor="middle">
-    <text x="400" y="480" font-size="46" letter-spacing="3">Didymos Mission</text>
-    <text x="400" y="545" font-size="46" letter-spacing="3">Analysis</text>
+  <g font-family="Georgia, Times New Roman, serif" fill="#F7EDDB" text-anchor="middle">
+    <text x="400" y="512" font-size="46" letter-spacing="3">Orbital Mechanics</text>
     <text x="400" y="940" font-size="20" letter-spacing="6" fill-opacity="0.7">PHOTO PENDING</text>
   </g>
 </svg>
