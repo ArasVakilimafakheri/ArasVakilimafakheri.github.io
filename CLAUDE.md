@@ -45,6 +45,11 @@ in both directions. Because it is positional, **reordering or inserting a tile
 reshuffles every colour after it** — that is fine, but do not expect a given
 project to keep its colour.
 
+Add `tile--light-media` to a tile whose picture is a plot or screenshot on
+white. Those leave the scrim far less to darken than a photograph does — the
+airfoil figure measured 3.4:1 behind its caption on the standard treatment, and
+5.2:1 with the modifier.
+
 The scrim is two layers: the palette tint at 50%, and a neutral darkening over
 it. The darkening is not decoration. The lighter palette colours over a bright
 photograph leave cream text almost unreadable, so the tint alone cannot carry it.
@@ -124,10 +129,26 @@ engine. Change it in one page and it must change in all of them.
 MP4s (`<video autoplay muted loop playsinline>` with a poster frame) and both
 pages use a still from the same footage. The ITT clip is ITT's own public brand
 reel, supplied by the owner, so it shows the company rather than his own work.
-Every other tile still shows a generated placeholder SVG labeled "PHOTO PENDING",
-and real photographs remain the main outstanding work. The remaining seven tiles
-link to pages that have not been written yet, so those links 404 until the photos
-arrive.
+`pinn-research` has a page too, built around the published paper: the ADC Lab
+tile is a streamline panel cropped out of the supplied `Airfoil_results.pdf`, and
+the page embeds `aiaa-2026-0590-variational-theory-of-lift.pdf` in an iframe with
+a plain download link beneath, since phone browsers routinely refuse to render a
+PDF in a frame. That PDF is 7.4 MB and will not compress — its figures are
+vector, so re-saving achieves nothing. Do not rasterise it; it is the published
+document of record.
+
+**The paper's author order is genuinely inconsistent**, so do not "correct" the
+citation without checking. The typeset author line reads Elmaradny, Abdelrazek,
+Vakilimafakheri, Taha — but the PDF's own document metadata, the Crossref record
+and the owner's resume all read Elmaradny, Vakilimafakheri, Abdelrazek, Taha. The
+site follows Crossref, because that is what indexes and Google Scholar will show.
+
+The remaining six tiles still show generated placeholder SVGs labeled "PHOTO
+PENDING" and link to pages that have not been written yet, so those links 404
+until the photos arrive.
+
+**PDF handling** uses `pymupdf` (installed): `page.get_pixmap(dpi=…, clip=Rect)`
+renders a region, which is how the ADC tile was cut out of a multi-panel figure.
 
 **Tile motion uses video, not GIF.** On the hot-fire footage the GIF came out 24x
 the size of the equivalent MP4 (5.2 MB against 215 KB for one second) because GIF
