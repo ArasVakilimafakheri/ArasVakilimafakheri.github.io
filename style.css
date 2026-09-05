@@ -466,8 +466,11 @@ h2 {
     gap: 32px;
   }
 
-  .about-portrait img {
-    aspect-ratio: 4 / 3;
+  /* The portrait keeps its 3:4 shape when the layout stacks. Widening it to
+     landscape here would crop a head-and-shoulders photograph down to a band
+     across the face. */
+  .about-portrait {
+    max-width: 380px;
   }
 }
 

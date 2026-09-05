@@ -80,6 +80,11 @@ project tile, not as a CV entry.
 `.claude/skills/add-project/`. It covers image optimization, the page template,
 and the grid tile.
 
+**Camera RAW**: the owner shoots RAW (`.NEF`), which browsers cannot display.
+Convert with `rawpy` (installed): `raw.postprocess(use_camera_wb=True)` into a
+Pillow image, then crop and save. Building the image from raw pixels this way
+carries no EXIF at all, so there is nothing to strip.
+
 **Images**: always run `py tools/optimize_images.py <folder>` before committing
 photos. It resizes, compresses, and strips EXIF — phone photos carry GPS
 coordinates that should not be published. Raw camera files committed by mistake
