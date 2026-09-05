@@ -465,6 +465,44 @@ h2 {
   border-bottom-color: var(--terracotta);
 }
 
+.doc-heading {
+  margin: 0 0 14px;
+}
+
+/* Video keeps its own 16:9 shape rather than the document height used for PDFs. */
+.video-embed {
+  margin: 0 0 44px;
+}
+
+.video-embed iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--rule);
+  background: #000;
+}
+
+.link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.link-list li {
+  margin-bottom: 10px;
+}
+
+.link-list a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(192, 92, 53, 0.35);
+  padding-bottom: 2px;
+}
+
+.link-list a:hover {
+  border-bottom-color: var(--terracotta);
+}
+
 .citation {
   border-left: 2px solid var(--terracotta);
   padding-left: 20px;
@@ -495,6 +533,18 @@ h2 {
   display: block;
   aspect-ratio: 16 / 10;
   object-fit: cover;
+}
+
+/* Not every source is high resolution — the rover CAD views come from README
+   screenshots only 393px wide. Stretched to the column they would be mush, so
+   they are held near their native size and keep their own proportions. */
+.project-figure--small {
+  max-width: 520px;
+}
+
+.project-figure--small img {
+  aspect-ratio: auto;
+  height: auto;
 }
 
 .project-figure figcaption {
