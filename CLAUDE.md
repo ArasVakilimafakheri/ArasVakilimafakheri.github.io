@@ -36,8 +36,23 @@ prefixes per page, which breaks in ways that are easy to miss.
 ## Design
 
 Image-led, in the manner of a photography portfolio: large pictures carry the
-page, text stays minimal. The home page is a three-column grid of 4:5 tiles whose
-captions appear on hover (and stay visible on touch devices, which have no hover).
+page, text stays minimal. The home page is a three-column grid of 4:5 tiles.
+
+**Tiles** — each carries a permanent colour tint with its title always visible,
+and lifts about 10px with a shadow on hover. The tint rotates through the palette
+by `:nth-child(4n + …)`, which in a three-column grid keeps neighbours different
+in both directions. Because it is positional, **reordering or inserting a tile
+reshuffles every colour after it** — that is fine, but do not expect a given
+project to keep its colour.
+
+The scrim is two layers: the palette tint at 50%, and a neutral darkening over
+it. The darkening is not decoration. The lighter palette colours over a bright
+photograph leave cream text almost unreadable, so the tint alone cannot carry it.
+Measured over the current media, the composite gives 4.4–8.5:1 contrast on
+average and about 3.4:1 against the brightest individual pixels, which is what
+the text-shadow on `.tile-title` / `.tile-meta` is there to cover. If the tint
+opacity or the darkening changes, re-measure rather than eyeballing it — bright
+smoke and pale sky are the cases that fail.
 
 **Palette** — terracotta `#c05c35`, amber `#eda24e`, cream `#f7eddb` (background),
 sage `#a1b076`, olive `#536036` (body text). Defined once as CSS variables; use
