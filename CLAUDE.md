@@ -130,8 +130,8 @@ MP4s (`<video autoplay muted loop playsinline>` with a poster frame) and both
 pages use a still from the same footage. The ITT clip is ITT's own public brand
 reel, supplied by the owner, so it shows the company rather than his own work.
 `pinn-research` has a page too, built around the published paper: the ADC Lab
-tile is a streamline panel cropped out of the supplied `Airfoil_results.pdf`, and
-the page embeds `aiaa-2026-0590-variational-theory-of-lift.pdf` in an iframe with
+tile is a modelled velocity field, cropped inside the axes so no title, tick
+labels or colourbar ride along. The page embeds `aiaa-2026-0590-variational-theory-of-lift.pdf` in an iframe with
 a plain download link beneath, since phone browsers routinely refuse to render a
 PDF in a frame. That PDF is 7.4 MB and will not compress — its figures are
 vector, so re-saving achieves nothing. Do not rasterise it; it is the published
