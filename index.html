@@ -3,253 +3,121 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aras Vakili — Portfolio</title>
-  <meta name="description" content="Aras Vakili — Mechanical &amp; Aerospace Engineering student at UC Irvine. Rocket propulsion, CAD, and research portfolio.">
+  <title>Aras Vakili</title>
+  <meta name="description" content="Aras Vakili — Mechanical &amp; Aerospace Engineering student at UC Irvine. Rocket propulsion, design, and research portfolio.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="#top">AV</a>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <a class="nav-resume" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+    <div class="header-inner">
+      <nav class="nav-left">
+        <a href="index.html" class="active">Work</a>
+        <a href="about.html">About</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
       </nav>
+
+      <a class="wordmark" href="index.html">Aras Vakili</a>
+
+      <div class="nav-right">
+        <a href="https://linkedin.com/in/aras-vakili" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.22 8.02h4.56V24H.22zM8.34 8.02h4.37v2.18h.06c.61-1.15 2.1-2.37 4.32-2.37 4.62 0 5.47 3.04 5.47 7v9.17h-4.56v-8.13c0-1.94-.03-4.44-2.7-4.44-2.71 0-3.12 2.11-3.12 4.29V24H8.34z"/></svg>
+        </a>
+        <a href="https://github.com/ArasVakilimafakheri" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"/></svg>
+        </a>
+        <a href="mailto:arasvakili@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+        </a>
+      </div>
     </div>
   </header>
 
-  <section class="hero" id="top">
-    <div class="container">
-      <p class="eyebrow">Mechanical &amp; Aerospace Engineering — UC Irvine</p>
-      <h1>I'm Aras Vakili.</h1>
-      <p class="hero-text">
-        A rising senior double-majoring in Mechanical and Aerospace Engineering at UC
-        Irvine, working across rocket propulsion, aerostructures, and applied research.
-      </p>
-      <div class="hero-links">
-        <a href="mailto:arasvakili@gmail.com">Email</a>
-        <a href="https://linkedin.com/in/aras-vakili" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
-        <a href="https://github.com/ArasVakilimafakheri" target="_blank" rel="noopener">GitHub</a>
-      </div>
+  <main>
+    <p class="intro">Mechanical &amp; Aerospace Engineering — University of California, Irvine</p>
+
+    <div class="grid">
+
+      <a class="tile" href="about.html">
+        <img src="images/about.svg" alt="Portrait of Aras Vakili">
+        <span class="tile-caption">
+          <span class="tile-title">About Me</span>
+          <span class="tile-meta">Aras Vakili</span>
+        </span>
+      </a>
+
+      <a class="tile" href="rocket-liquids.html">
+        <img src="images/rocket-liquids.svg" alt="UCI Rocket Project Liquids">
+        <span class="tile-caption">
+          <span class="tile-title">UCI Rocket Project — Liquids</span>
+          <span class="tile-meta">Propulsion · 2025</span>
+        </span>
+      </a>
+
+      <a class="tile" href="pinn-research.html">
+        <img src="images/pinn-research.svg" alt="Physics-informed neural network research">
+        <span class="tile-caption">
+          <span class="tile-title">Physics-Informed Neural Networks</span>
+          <span class="tile-meta">Research · 2025</span>
+        </span>
+      </a>
+
+      <a class="tile" href="solar-car-suspension.html">
+        <img src="images/solar-car-suspension.svg" alt="Double-wishbone suspension project">
+        <span class="tile-caption">
+          <span class="tile-title">Double-Wishbone Suspension</span>
+          <span class="tile-meta">UCI Solar Car · 2025</span>
+        </span>
+      </a>
+
+      <a class="tile" href="aircraft-design.html">
+        <img src="images/aircraft-design.svg" alt="Single-engine aircraft design">
+        <span class="tile-caption">
+          <span class="tile-title">Single-Engine Aircraft Design</span>
+          <span class="tile-meta">CAD &amp; Flow Simulation</span>
+        </span>
+      </a>
+
+      <a class="tile" href="didymos-mission.html">
+        <img src="images/didymos-mission.svg" alt="Didymos mission analysis">
+        <span class="tile-caption">
+          <span class="tile-title">Didymos Mission Analysis</span>
+          <span class="tile-meta">MATLAB · MAE 146</span>
+        </span>
+      </a>
+
+      <a class="tile" href="autonomous-rover.html">
+        <img src="images/autonomous-rover.svg" alt="Autonomous rover">
+        <span class="tile-caption">
+          <span class="tile-title">Autonomous Rover</span>
+          <span class="tile-meta">Design &amp; Controls</span>
+        </span>
+      </a>
+
+      <a class="tile" href="rc-rover.html">
+        <img src="images/rc-rover.svg" alt="RC rover">
+        <span class="tile-caption">
+          <span class="tile-title">RC Rover</span>
+          <span class="tile-meta">Chassis &amp; Drivetrain</span>
+        </span>
+      </a>
+
+      <a class="tile" href="life-tank.html">
+        <img src="images/life-tank.svg" alt="Life tank prototype">
+        <span class="tile-caption">
+          <span class="tile-title">Life Tank Prototype</span>
+          <span class="tile-meta">Prototype Design</span>
+        </span>
+      </a>
+
     </div>
-  </section>
-
-  <section id="about" class="about">
-    <div class="container">
-      <h2><span class="index">01</span> About</h2>
-      <div class="about-grid">
-        <p>
-          I'm currently pursuing a B.S. in Mechanical Engineering and a B.S. in
-          Aerospace Engineering at UC Irvine (GPA 3.88), and I'm a UC Regents' Scholar
-          and 8-time Dean's Honors List recipient. My work spans hands-on propulsion
-          hardware, manufacturing engineering, and computational research — from
-          machining custom rocket propellant manifolds to developing physics-informed
-          neural networks published at AIAA SciTech.
-        </p>
-        <ul class="skills">
-          <li><span class="skills-label">Software</span>Siemens NX/Teamcenter, Creo Parametric, Windchill, SolidWorks (CSWA), FEA, SAP, MATLAB, Python</li>
-          <li><span class="skills-label">Fabrication</span>Manual Mill &amp; Lathe, MIG Welding, FDM &amp; SLA 3D Printing</li>
-          <li><span class="skills-label">Methods</span>FMEA, PFMEA, GD&amp;T, DfM, DfAM</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience" class="experience">
-    <div class="container">
-      <h2><span class="index">02</span> Experience</h2>
-      <div class="timeline">
-
-        <article class="timeline-item">
-          <div class="timeline-head">
-            <h3>ITT Inc.</h3>
-            <span class="dates">Jun 2026 – Present</span>
-          </div>
-          <p class="role">Manufacturing Engineering Intern</p>
-          <ul>
-            <li>Developed control documents for UV and CO2 laser machines producing mission-critical cables for the Minuteman III program</li>
-            <li>Authored a controlled SOP for fixture and tooling lifecycle, storage, and inventory, applying PFMEA to close gaps in the site's 5S strategy</li>
-          </ul>
-        </article>
-
-        <article class="timeline-item">
-          <div class="timeline-head">
-            <h3>UC Irvine Rocket Project, Liquids</h3>
-            <span class="dates">May 2025 – Present</span>
-          </div>
-          <p class="role">Project Manager &amp; Test Program Manager <span class="role-prev">(previously Propulsion Engineer)</span></p>
-          <ul>
-            <li>Lead a 30+ member interdisciplinary team developing UCI's second liquid bi-propellant rocket</li>
-            <li>Designed and validated a cascading K-bottle manifold, cutting cold flow and hot-fire test time by 50%</li>
-            <li>Oversee component tests, cold flows, and engine hot-fires, conducting root-cause failure analyses after test anomalies</li>
-          </ul>
-        </article>
-
-        <article class="timeline-item">
-          <div class="timeline-head">
-            <h3>UC Irvine Aeronautics, Dynamics, and Control Lab</h3>
-            <span class="dates">Mar 2025 – Jun 2026</span>
-          </div>
-          <p class="role">Undergraduate Research Assistant</p>
-          <ul>
-            <li>Developed a data-free physics-informed neural network (PINN) using the Principle of Minimum Pressure Gradient to simulate Poiseuille flow and inviscid airfoil lift</li>
-            <li>Trained variational PINN models on UCI's HPC3 cluster; co-authored resulting paper at AIAA SciTech 2026</li>
-          </ul>
-        </article>
-
-        <article class="timeline-item">
-          <div class="timeline-head">
-            <h3>UC Irvine Solar Car</h3>
-            <span class="dates">Jan 2025 – May 2025</span>
-          </div>
-          <p class="role">Suspension Engineer</p>
-          <ul>
-            <li>Reverse-engineered double-wishbone suspension components via laser scanning and CMM into high-fidelity CAD models</li>
-            <li>Led fabrication of key suspension elements, including a custom trailing arm and precision welding jigs</li>
-          </ul>
-        </article>
-
-        <article class="timeline-item">
-          <div class="timeline-head">
-            <h3>Tau Beta Pi — Engineering Honor Society</h3>
-            <span class="dates">Jan 2025 – Jun 2026</span>
-          </div>
-          <p class="role">President <span class="role-prev">(previously Media Co-Chair)</span></p>
-          <ul>
-            <li>Led chapter operations and board initiatives while revitalizing the chapter's social media and website</li>
-          </ul>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="projects" class="projects">
-    <div class="container">
-      <h2><span class="index">03</span> Featured Projects</h2>
-      <div class="project-grid featured">
-
-        <article class="project-card">
-          <h3>Cascading K-Bottle Manifold</h3>
-          <p class="project-tag">UC Irvine Rocket Project, Liquids</p>
-          <p>
-            Designed and validated a cascading K-bottle manifold for propellant
-            pressurization, cutting cold flow and hot-fire test turnaround time by
-            50%. Machined 3 custom manifolds in-house, eliminating 30+ fittings to
-            reduce leak paths, and produced GD&amp;T-compliant injector drawings in
-            Siemens NX for manufacturability.
-          </p>
-        </article>
-
-        <article class="project-card">
-          <h3>Physics-Informed Neural Networks for Flow Prediction</h3>
-          <p class="project-tag">UC Irvine Aeronautics, Dynamics, and Control Lab</p>
-          <p>
-            Built a data-free PINN using the Principle of Minimum Pressure Gradient to
-            simulate Poiseuille flow and extended the framework to predict inviscid
-            airfoil lift and circulation without pressure data, training variational
-            models on UCI's HPC3 cluster.
-          </p>
-          <a class="project-link" href="https://doi.org/10.2514/6.2026-0590" target="_blank" rel="noopener">Read the paper (AIAA SciTech 2026) &rarr;</a>
-        </article>
-
-        <article class="project-card">
-          <h3>Double-Wishbone Suspension Reverse Engineering</h3>
-          <p class="project-tag">UC Irvine Solar Car</p>
-          <p>
-            Reverse-engineered double-wishbone suspension components via laser
-            scanning and CMM measurement, producing high-fidelity CAD models and
-            leading fabrication of a custom trailing arm and precision welding jigs.
-          </p>
-        </article>
-
-      </div>
-
-      <h3 class="subsection-heading">Other Projects &amp; Code</h3>
-      <div class="project-grid">
-
-        <article class="project-card">
-          <h4>Mission Analysis to (65803) Didymos</h4>
-          <p>
-            Preliminary mission analysis in MATLAB for a mission to the near-Earth
-            object (NEO) 65803 Didymos, completed as a final project for MAE 146.
-          </p>
-          <a class="project-link" href="https://github.com/ArasVakilimafakheri/MAE-146-Final-Project-Problem-4" target="_blank" rel="noopener">View on GitHub &rarr;</a>
-        </article>
-
-        <article class="project-card">
-          <h4>Single-Engine Aircraft Design</h4>
-          <p>
-            CAD assembly and flow simulation for a single-engine aircraft design,
-            covering geometry modeling and aerodynamic analysis.
-          </p>
-          <a class="project-link" href="https://github.com/ArasVakilimafakheri/Single-Engine-Aircraft-Design-CAD-Assembly-and-Flow-Simulation" target="_blank" rel="noopener">View on GitHub &rarr;</a>
-        </article>
-
-        <article class="project-card">
-          <h4>MATLAB Rainfall Predictor</h4>
-          <p>
-            A MATLAB program for predicting rainfall from data-driven modeling
-            techniques.
-          </p>
-          <a class="project-link" href="https://github.com/ArasVakilimafakheri/MATLAB-Rainfall-Predictor" target="_blank" rel="noopener">View on GitHub &rarr;</a>
-        </article>
-
-        <article class="project-card">
-          <h4>Life Tank Prototype</h4>
-          <p>
-            Prototype design and build project focused on tank system development.
-          </p>
-          <a class="project-link" href="https://github.com/ArasVakilimafakheri/LIFE-TANK-PROTOTYPE" target="_blank" rel="noopener">View on GitHub &rarr;</a>
-        </article>
-
-        <article class="project-card">
-          <h4>Autonomous Rover</h4>
-          <p>
-            Design and development of an autonomous rover platform, combining
-            mechanical design with onboard control.
-          </p>
-          <a class="project-link" href="https://github.com/ArasVakilimafakheri/Autonomous-Rover" target="_blank" rel="noopener">View on GitHub &rarr;</a>
-        </article>
-
-        <article class="project-card">
-          <h4>RC Rover</h4>
-          <p>
-            A remote-controlled rover project covering chassis design, drivetrain,
-            and control electronics.
-          </p>
-          <a class="project-link" href="https://github.com/ArasVakilimafakheri/RC-Rover" target="_blank" rel="noopener">View on GitHub &rarr;</a>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2><span class="index">04</span> Contact</h2>
-      <p>Feel free to reach out or connect with me:</p>
-      <ul class="contact-list">
-        <li><a href="mailto:arasvakili@gmail.com">Email</a></li>
-        <li><a href="https://linkedin.com/in/aras-vakili" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li><a href="resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a></li>
-        <li><a href="https://github.com/ArasVakilimafakheri" target="_blank" rel="noopener">GitHub</a></li>
-      </ul>
-    </div>
-  </section>
+  </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 Aras Vakili</p>
-    </div>
+    <p>Aras Vakili · <a href="mailto:arasvakili@gmail.com">arasvakili@gmail.com</a></p>
   </footer>
 
 </body>
