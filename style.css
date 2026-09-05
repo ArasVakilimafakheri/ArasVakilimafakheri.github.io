@@ -353,8 +353,10 @@ h2 {
 
 /* Project pages */
 
+/* Wide enough that a role and a date range stay on one line together; the
+   body copy below keeps its own narrower measure for readability. */
 .project-header {
-  max-width: 680px;
+  max-width: 900px;
   padding: 20px 0 36px;
 }
 
@@ -377,13 +379,17 @@ h2 {
   border-bottom-color: var(--terracotta);
 }
 
-/* Named collaborators: label above, person below, in two columns on wider
-   screens so the pairs stay visually attached to each other. */
+/* Named collaborators, one role per row: label in a column of its own, person
+   beside it. The column count is fixed rather than auto-fit, because auto-fit
+   packs as many cells per row as will fit and separates a label from the name
+   it belongs to as soon as the container gets wide enough. */
 .people {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, max-content));
-  gap: 4px 48px;
+  grid-template-columns: max-content 1fr;
+  gap: 8px 28px;
+  align-items: baseline;
   margin: 22px 0 0;
+  max-width: 620px;
 }
 
 .people dt {
@@ -615,5 +621,15 @@ h2 {
 
   h1 {
     font-size: 2rem;
+  }
+
+  /* Label and name side by side is too wide for a phone; stack them. */
+  .people {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .people dd {
+    margin-bottom: 14px;
   }
 }
