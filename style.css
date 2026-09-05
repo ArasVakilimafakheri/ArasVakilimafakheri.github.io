@@ -47,24 +47,32 @@ img {
    --------------------------------------------------------------- */
 
 .site-header {
-  padding: 26px 32px 30px;
+  padding: 34px 36px 38px;
 }
 
+/*
+ * The wordmark is centred on the page rather than placed in a middle grid
+ * column. A three-column `1fr auto 1fr` grid forces both side columns to the
+ * width of the wider one, so the broad left-hand nav reserved the same space
+ * again on the icon side -- roughly 260px of nothing, which pushed the point
+ * where the header stops fitting out past most laptop screens.
+ */
 .header-inner {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 20px;
+  position: relative;
 }
 
 .nav-left {
   display: flex;
-  gap: 26px;
+  gap: 32px;
 }
 
 .nav-left a {
   font-family: var(--display);
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.14em;
@@ -82,24 +90,34 @@ img {
 
 .wordmark {
   font-family: var(--display);
-  font-size: 1.15rem;
+  font-size: 1.55rem;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.18em;
   text-decoration: none;
   white-space: nowrap;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-right {
   display: flex;
   justify-content: flex-end;
-  gap: 18px;
+  gap: 22px;
 }
 
 .nav-right a {
   display: inline-flex;
   color: var(--text);
   transition: color 0.2s ease;
+}
+
+/* Sized here rather than on each <svg>, so the icons stay adjustable in one
+   place instead of across four copies of the nav. */
+.nav-right svg {
+  width: 23px;
+  height: 23px;
 }
 
 .nav-right a:hover {
@@ -386,29 +404,38 @@ h2 {
    Responsive
    --------------------------------------------------------------- */
 
-@media (max-width: 900px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
+/*
+ * Stack the header before the centred wordmark can reach the nav links. The
+ * full name set at this size is wide, so the two collide at about 1240px --
+ * on smaller laptops, not just tablets. Measured, not guessed: at 1180px the
+ * wordmark overlapped "Resume" by 15px.
+ */
+@media (max-width: 1260px) {
+  .header-inner {
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
   }
 
-  /* Stack the header before the wordmark starts crowding the nav links */
-  .header-inner {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    gap: 14px;
+  .wordmark {
+    position: static;
+    transform: none;
+    order: 1;
   }
 
   .nav-left {
     order: 2;
   }
 
-  .wordmark {
-    order: 1;
-  }
-
   .nav-right {
     order: 3;
     justify-content: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .about-layout {
@@ -427,11 +454,15 @@ h2 {
   }
 
   .nav-left {
-    gap: 20px;
+    gap: 22px;
+  }
+
+  .nav-left a {
+    font-size: 0.95rem;
   }
 
   .wordmark {
-    font-size: 1.05rem;
+    font-size: 1.2rem;
   }
 
   .intro,

@@ -1,6 +1,6 @@
 # Portfolio site
 
-Personal portfolio for Aras Vakili (Mechanical & Aerospace Engineering, UC Irvine),
+Personal portfolio for Aras Vakilimafakheri (Mechanical & Aerospace Engineering, UC Irvine),
 served by GitHub Pages at <https://arasvakilimafakheri.github.io>.
 
 The owner is new to web development and git. Explain changes in plain language and
@@ -45,6 +45,15 @@ sage `#a1b076`, olive `#536036` (body text). Defined once as CSS variables; use
 
 **Fonts** — Cormorant Garamond for display type (nav, headings, tile captions),
 uppercase with wide letter-spacing. Karla for body copy.
+
+**Header** — the wordmark is absolutely centred on the page, with the nav on the
+left and icons on the right, and the whole thing stacks into a centred column
+below 1260px. That breakpoint is high because "Aras Vakilimafakheri" set at
+1.55rem is a wide piece of type: measured, the wordmark reaches the nav links at
+about 1240px. If the name, its size or the nav items change, re-measure and move
+the breakpoint rather than assuming it still holds. Avoid going back to a
+three-column `1fr auto 1fr` grid — it forces both side columns to match the wider
+one, wasting roughly 260px and pushing the collision point past most laptops.
 
 **No Experience section.** This was an explicit decision: the resume covers
 employment history, and the site is for showing work. ITT Cannon appears as a
