@@ -53,16 +53,40 @@ def run(args, label):
         raise SystemExit(f"ffmpeg failed during {label}:\n{tail}")
 
 
-def crop_filter(aspect):
-    """Centre-crop to an aspect ratio, e.g. '4:5' for the portrait grid tiles."""
+def crop_filter(aspect, anchor="center"):
+    """
+    Crop to an aspect ratio, e.g. '4:5' for the portrait grid tiles.
+
+    Anchor matters more than it sounds. Cropping a 16:9 frame to 4:5 throws away
+    more than half the width, so a subject sitting off to one side -- an engine
+    at the right edge with its plume trailing left, say -- disappears entirely
+    under the default centre crop.
+    """
     if not aspect:
         return ""
     try:
         w, h = (float(n) for n in aspect.split(":"))
     except ValueError:
         raise SystemExit(f"Could not read aspect ratio: {aspect!r} (expected e.g. 4:5)")
-    # Take the largest centred rectangle of this ratio that fits in the source.
-    return f"crop='min(iw,ih*{w}/{h})':'min(ih,iw*{h}/{w})',"
+
+    cw = f"min(iw,ih*{w}/{h})"
+    ch = f"min(ih,iw*{h}/{w})"
+
+    if anchor == "left":
+        x = "0"
+    elif anchor == "right":
+        x = f"iw-{cw}"
+    elif anchor == "center":
+        x = f"(iw-{cw})/2"
+    else:
+        try:
+            x = str(int(anchor))  # explicit pixel offset
+        except ValueError:
+            raise SystemExit(f"--anchor must be left, center, right, or a pixel offset (got {anchor!r})")
+
+    # Each expression is quoted because they contain commas, which ffmpeg would
+    # otherwise read as the separator between one filter and the next.
+    return f"crop='{cw}':'{ch}':'{x}':'(ih-{ch})/2',"
 
 
 def main():
@@ -75,7 +99,10 @@ def main():
     p.add_argument("--width", type=int, default=800, help="Output width in px (default 800)")
     p.add_argument("--fps", type=int, default=12, help="GIF frame rate (default 12)")
     p.add_argument("--aspect", default=None,
-                   help="Centre-crop to this ratio, e.g. 4:5 for a grid tile")
+                   help="Crop to this ratio, e.g. 4:5 for a grid tile")
+    p.add_argument("--anchor", default="center",
+                   help="Where the crop sits horizontally: left, center, right, "
+                        "or a pixel offset (default center)")
     p.add_argument("--gif-only", action="store_true", help="Skip the MP4")
     args = p.parse_args()
 
@@ -90,7 +117,7 @@ def main():
         print(f"Note: {duration:.1f}s is long for a looping clip; 3-6s usually reads better.\n")
 
     os.makedirs(args.out, exist_ok=True)
-    crop = crop_filter(args.aspect)
+    crop = crop_filter(args.aspect, args.anchor)
     scale = f"scale={args.width}:-2:flags=lanczos"
 
     # Seeking before -i is fast; -t keeps the duration unambiguous.

@@ -50,7 +50,9 @@
       </a>
 
       <a class="tile" href="rocket-liquids.html">
-        <img src="images/rocket-liquids.svg" alt="UCI Rocket Project Liquids">
+        <video src="images/rocket-liquids.mp4" poster="images/rocket-liquids-poster.jpg"
+               autoplay muted loop playsinline
+               aria-label="Hot fire test of the UCI Rocket Project liquid engine"></video>
         <span class="tile-caption">
           <span class="tile-title">UCI Rocket Project — Liquids</span>
           <span class="tile-meta">Propulsion · 2025</span>
@@ -119,6 +121,38 @@
   <footer class="site-footer">
     <p>Aras Vakili · <a href="mailto:arasvakili@gmail.com">arasvakili@gmail.com</a></p>
   </footer>
+
+  <script>
+    (function () {
+      var clips = document.querySelectorAll('.tile video');
+
+      // Motion that loops forever can be genuinely unpleasant for people with
+      // vestibular disorders, so honour the system "reduce motion" setting by
+      // leaving the clip on its poster frame instead of playing it.
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        clips.forEach(function (video) {
+          video.removeAttribute('autoplay');
+          video.pause();
+        });
+        return;
+      }
+
+      // Some browsers refuse to autoplay until the page has been interacted
+      // with, even for muted video, which would strand the tile on its poster.
+      // Nudge playback on load and again at the first sign of interaction.
+      function play() {
+        clips.forEach(function (video) {
+          if (video.paused) {
+            video.play().catch(function () {});
+          }
+        });
+      }
+
+      play();
+      document.addEventListener('pointerdown', play, { once: true });
+      document.addEventListener('scroll', play, { once: true, passive: true });
+    })();
+  </script>
 
 </body>
 </html>

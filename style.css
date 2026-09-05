@@ -136,7 +136,8 @@ img {
   text-decoration: none;
 }
 
-.tile img {
+.tile img,
+.tile video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -145,7 +146,9 @@ img {
 }
 
 .tile:hover img,
-.tile:focus-visible img {
+.tile:focus-visible img,
+.tile:hover video,
+.tile:focus-visible video {
   transform: scale(1.04);
 }
 

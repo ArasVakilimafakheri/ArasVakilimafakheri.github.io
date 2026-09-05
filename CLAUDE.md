@@ -85,7 +85,20 @@ engine. Change it in one page and it must change in all of them.
 
 ## Current state
 
-Every tile still shows a generated placeholder SVG labeled "PHOTO PENDING". Real
-photographs are the main outstanding work. Project pages exist for `itt-cannon`
-and `rocket-liquids`; the remaining tiles link to pages that have not been written
-yet, so those links 404 until the photos arrive.
+`rocket-liquids` has real media: its tile is a looping muted MP4 of a hot fire
+(`<video autoplay muted loop playsinline>` with a poster frame), and its page uses
+a still from the same test. Every other tile still shows a generated placeholder
+SVG labeled "PHOTO PENDING", and real photographs remain the main outstanding
+work. Project pages exist for `itt-cannon` and `rocket-liquids`; the remaining
+tiles link to pages that have not been written yet, so those links 404 until the
+photos arrive.
+
+**Tile motion uses video, not GIF.** On the hot-fire footage the GIF came out 24x
+the size of the equivalent MP4 (5.2 MB against 215 KB for one second) because GIF
+is capped at 256 colours and has no interframe compression. A muted autoplaying
+MP4 looks the same on the page. The small script at the bottom of `index.html`
+pauses tile video when the visitor has "reduce motion" set, and retries playback
+on first interaction for browsers that block autoplay until then.
+
+Source video lives outside the repo, under
+`Desktop/Media For Portfolio/`, along with rejected clip options.
