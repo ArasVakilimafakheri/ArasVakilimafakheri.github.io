@@ -25,7 +25,7 @@ rocket-liquids.html   /  one page per project, flat at the root
 style.css             all styling; palette as CSS variables at the top
 resume.pdf            linked from the nav and the About page
 images/               web-ready images (currently placeholder SVGs)
-tools/                optimize_images.py, clip_to_gif.py
+tools/                optimize_images.py, video_to_tile.py
 .claude/skills/       add-project skill
 ```
 
@@ -61,11 +61,17 @@ photos. It resizes, compresses, and strips EXIF — phone photos carry GPS
 coordinates that should not be published. Raw camera files committed by mistake
 stay in git history permanently.
 
-**Video clips**: `py tools/clip_to_gif.py <video> --start 0:12 --end 0:16 --name <slug>`
-cuts a clip and writes both a GIF and an MP4 so their sizes can be compared. It
-uses the ffmpeg bundled with the `imageio-ffmpeg` package, so nothing has to be
-installed system-wide. Keep source video out of the repo — only the output
-belongs in `images/`.
+**Video clips**: `py tools/video_to_tile.py <video> --name <slug> --aspect 4:5`
+crops and encodes tile media. Add `--start`/`--end` for a cut, or omit both for
+the whole video; `--mp4-only` skips the GIF, and `--crf`, `--width` and
+`--mp4-fps` trade quality against size. It uses the ffmpeg bundled with the
+`imageio-ffmpeg` package, so nothing has to be installed system-wide. Keep source
+video out of the repo — only the output belongs in `images/`.
+
+Watch the weight. Tile video autoplays on the home page, so seconds cost
+kilobytes: the 0.9s rocket clip is 163 KB while the 28.6s ITT reel is 1.9 MB even
+at 640px, 20fps and CRF 31. A short loop is usually the better answer than a
+long one compressed hard.
 
 **The nav bar is duplicated in every HTML file** — the cost of having no template
 engine. Change it in one page and it must change in all of them.
@@ -85,13 +91,14 @@ engine. Change it in one page and it must change in all of them.
 
 ## Current state
 
-`rocket-liquids` has real media: its tile is a looping muted MP4 of a hot fire
-(`<video autoplay muted loop playsinline>` with a poster frame), and its page uses
-a still from the same test. Every other tile still shows a generated placeholder
-SVG labeled "PHOTO PENDING", and real photographs remain the main outstanding
-work. Project pages exist for `itt-cannon` and `rocket-liquids`; the remaining
-tiles link to pages that have not been written yet, so those links 404 until the
-photos arrive.
+`rocket-liquids` and `itt-cannon` have real media: both tiles are looping muted
+MP4s (`<video autoplay muted loop playsinline>` with a poster frame) and both
+pages use a still from the same footage. The ITT clip is ITT's own public brand
+reel, supplied by the owner, so it shows the company rather than his own work.
+Every other tile still shows a generated placeholder SVG labeled "PHOTO PENDING",
+and real photographs remain the main outstanding work. The remaining seven tiles
+link to pages that have not been written yet, so those links 404 until the photos
+arrive.
 
 **Tile motion uses video, not GIF.** On the hot-fire footage the GIF came out 24x
 the size of the equivalent MP4 (5.2 MB against 215 KB for one second) because GIF
